@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История языка программирования Go</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Язык программирования Go (Golang)</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#history">История создания</a></li>
+            <li><a href="#overview">Краткий обзор</a></li>
+            <li><a href="#examples">Примеры кода</a></li>
+            <li><a href="https://golang.org" target="_blank">Официальный сайт Go</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="history">
+            <h2>История создания</h2>
+            <p>Язык Go был разработан в 2007 году в компании Google тремя инженерами: <strong>Робом Пайком</strong>, <strong>Кеном Томпсоном</strong> и <strong>Робертом Гризмером</strong>.</p>
+            <img src="image-left.jpg" alt="Логотип Go" class="left">
+            <p>Основной задачей языка было устранение недостатков существующих языков программирования, таких как сложность и медлительность.</p>
+            <blockquote>“Скорость, надежность, эффективность — вот три основных принципа языка Go.” — <cite>Разработчики Go</cite></blockquote>
+        </section>
+        <section id="overview">
+            <h2>Краткий обзор</h2>
+            <p>Go сочетает простоту синтаксиса с мощными инструментами, включая:</p>
+            <ul>
+                <li>Компиляцию в исполняемые файлы</li>
+                <li>Быструю сборку мусора</li>
+                <li>Поддержку многопоточности</li>
+            </ul>
+            <p>Популярные области применения Go:</p>
+            <ol>
+                <li>Серверная разработка</li>
+                <li>Облачные сервисы</li>
+                <li>Микросервисы</li>
+            </ol>
+            <h3>Особенности языка Go</h3>
+            <ul class="custom-bullets-bg">
+                <li>Поддержка статической типизации</li>
+                <li>Высокая скорость выполнения</li>
+                <li>Простота изучения</li>
+            </ul>
+            <img src="image-center.jpg" alt="Go logo above overview" class="center">
+            <table class="t2">
+                <caption>Основные события в истории Go</caption>
+                <thead>
+                    <tr>
+                        <th>Год</th>
+                        <th>Событие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2009</td>
+                        <td>Go стал открытым проектом</td>
+                    </tr>
+                    <tr>
+                        <td>2012</td>
+                        <td>Первая стабильная версия Go 1.0</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="2">Источник: Google</th>
+                    </tr>
+                </tfoot>
+            </table>            
+        </section>
+        
+        <img src="image-right.jpg" alt="Инженеры Google" class="right">
+        <section id="examples">
+            <h2>Примеры кода</h2>
+            <p>Пример программы на Go:</p>
+            <pre>
+                <code class="code">
+        <span class="keyword">package</span> main
+        
+        <span class="keyword">import</span> <span class="string">"fmt"</span>
+        
+        <span class="keyword">func</span> <span class="function">main</span>() {
+            fmt.Println(<span class="string">"Hello, World!"</span>)
+        }
+                </code>
+            </pre>
+        
+            <p>Пример использования функции для подсчета суммы:</p>
+            <pre>
+                <code class="code">
+        <span class="keyword">package</span> main
+        
+        <span class="keyword">import</span> <span class="string">"fmt"</span>
+        
+        <span class="keyword">func</span> <span class="function">sum</span>(a <span class="keyword">int</span>, b <span class="keyword">int</span>) <span class="keyword">int</span> {
+            <span class="keyword">return</span> a + b
+        }
+        
+        <span class="keyword">func</span> <span class="function">main</span>() {
+            result := <span class="function">sum</span>(10, 20)
+            fmt.Println(<span class="string">"Сумма:"</span>, result)
+        }
+                </code>
+            </pre>
+        
+            <p>Пример работы с циклами:</p>
+            <pre>
+                <code class="code">
+        <span class="keyword">package</span> main
+        
+        <span class="keyword">import</span> <span class="string">"fmt"</span>
+        
+        <span class="keyword">func</span> <span class="function">main</span>() {
+            <span class="keyword">for</span> i := 1; i <= 5; i++ {
+                fmt.Println(<span class="string">"Итерация:"</span>, i)
+            }
+        }
+                </code>
+            </pre>
+        </section>        
+    </main>
+    
+    <footer>
+        <h3>Использованные теги и CSS-свойства</h3>
+        <p><strong>Список тегов:</strong> html, head, meta, title, link, body, header, h1, h2, h3, p, ul, li, ol, img, nav, main, section, table, thead, tbody, tfoot, th, td, caption, pre, code, blockquote, cite, strong, a, footer.</p>
+        <p><strong>Список CSS-свойств:</strong> font-family, font-size, color, text-align, margin, padding, float, display, background-color, background-image, background-repeat, background-size, border, border-collapse, line-height, width, height, overflow-x, font-weight, list-style, text-decoration, vertical-align и др.</p>
+    </footer>
+</body>
+</html>
