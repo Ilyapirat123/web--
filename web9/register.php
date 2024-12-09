@@ -1,24 +1,16 @@
 <?php
 include 'db.php';
-session_start();
-
-$errorMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-    $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch();
+    $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+    $stmt->execute(['username' => $username, 'password' => $password]);
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user;
-        header('Location: dashboard.php');
-        exit;
-    } else {
-        $errorMessage = "Неверный логин или пароль!";
-    }
+    echo "<div style='text-align: center; margin-top: 50px; font-size: 20px; color: green;'>Регистрация успешна!</div>";
+    header('Location: login.php');
+    exit;
 }
 ?>
 
@@ -27,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авторизация</title>
+    <title>Регистрация</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,25 +74,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         a:hover {
             text-decoration: underline;
         }
-        .error {
-            color: red;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Вход</h1>
-        <?php if (!empty($errorMessage)): ?>
-            <div class="error"><?= htmlspecialchars($errorMessage) ?></div>
-        <?php endif; ?>
+        <h1>Регистрация</h1>
         <form method="post">
             <input type="text" name="username" placeholder="Логин" required>
             <input type="password" name="password" placeholder="Пароль" required>
-            <button type="submit">Войти</button>
+            <button type="submit">Зарегистрироваться</button>
         </form>
-        <a href="register.php">Создать аккаунт</a>
+        <a href="login.php">Уже есть аккаунт? Войти</a>
     </div>
 </body>
 </html>
