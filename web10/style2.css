@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+
+.main-header {
+    background-color: #83df86;
+    padding: 30px 0;
+    position: relative; 
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2; 
+}
+
+.main-header .logo img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease; 
+}
+
+.main-header .logo img:hover {
+    transform: scale(1.1); 
+}
+
+.main-header .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-header .main-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+.main-header .main-nav ul li a:hover {
+    text-decoration: underline; 
+    color: #004d00; 
+}
+
+
+.image-bar {
+    position: absolute; 
+    top: 10px; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; 
+    padding: 0 20px; 
+    z-index: 1; 
+}
+
+.image-bar img {
+    width: 50px; 
+    height: 50px;
+    object-fit: cover; 
+    transition: transform 0.3s ease; 
+}
+
+.image-bar img:hover {
+    transform: scale(1.2); 
+}
+
+.news-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.news-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4CAF50;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-article {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.news-article:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-article h3 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.news-article p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.news-article a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+}
+
+
+.main-footer {
+    background-color: #8FCB81;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
